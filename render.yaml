@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: llm-quiz-solver
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt && playwright install chromium
+    startCommand: python app.py
+    envVars:
+      - key: EMAIL
+        sync: false
+      - key: SECRET
+        sync: false
+      - key: AIPIPE_TOKEN
+        sync: false
+      - key: OPENAI_BASE_URL
+        value: https://aipipe.org/openai/v1
+      - key: DEFAULT_MODEL
+        value: gpt-4o-mini
+      - key: TEMPERATURE
+        value: 0.1
+      - key: MAX_TOKENS
+        value: 4096

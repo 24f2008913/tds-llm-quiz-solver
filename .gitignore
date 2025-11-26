@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Environment
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Data files (temporary downloads)
+data/
+downloads/
+temp/
+*.pdf
+*.csv
+*.xlsx
+*.png
+*.jpg
+*.jpeg
+
+# Playwright
+.pytest_cache/
+playwright-report/
+
+# Distribution
+dist/
+build/
+*.egg-info/
