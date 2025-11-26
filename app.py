@@ -100,14 +100,3 @@ def index():
         }
     }), 200
 
-
-if __name__ == '__main__':
-    # Validate configuration
-    if not EMAIL or not SECRET:
-        logger.error("EMAIL and SECRET must be set in environment variables")
-        exit(1)
-    
-    logger.info(f"Starting server on {HOST}:{PORT}")
-    logger.info(f"Configured for email: {EMAIL}")
-    
-    app.run(host=HOST, port=PORT, debug=False)
