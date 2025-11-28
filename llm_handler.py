@@ -16,7 +16,7 @@ class LLMHandler:
         # AI Pipe configuration
         self.aipipe_token = os.getenv('AIPIPE_TOKEN')
         self.openai_base_url = os.getenv('OPENAI_BASE_URL', 'https://aipipe.org/openai/v1')
-        self.model = model or os.getenv('DEFAULT_MODEL', 'gpt-5-nano')
+        self.model = model or os.getenv('DEFAULT_MODEL', 'gpt-4o-mini')
         self.temperature = float(os.getenv('TEMPERATURE', 0.1))
         self.max_tokens = int(os.getenv('MAX_TOKENS', 4096))
         
@@ -82,7 +82,7 @@ class LLMHandler:
                 "model": self.model,
                 "messages": messages,
                 "temperature": temperature,
-                "max_completion_tokens": max_tokens  # Updated parameter name for newer models
+                "max_tokens": max_tokens
             }
             
             if json_mode:

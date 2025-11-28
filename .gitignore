@@ -45,3 +45,20 @@ playwright-report/
 dist/
 build/
 *.egg-info/
+
+# Test files
+test_*.py
+check_*.py
+utils.py
+setup.ps1
+
+# Documentation
+ARCHITECTURE.md
+CHECKLIST.md
+DEPLOY_FILES.md
+GITHUB_DEPLOY.md
+PROMPTS.md
+PROMPT_EXAMPLES.md
+QUICKSTART.md
+QUICK_REFERENCE.md
+SUMMARY.md

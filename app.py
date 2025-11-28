@@ -100,3 +100,14 @@ def index():
         }
     }), 200
 
+
+if __name__ == '__main__':
+    # Validate configuration at startup
+    if not EMAIL or not SECRET:
+        logger.error("EMAIL and SECRET must be set in environment variables")
+        exit(1)
+    
+    logger.info(f"Starting server on {HOST}:{PORT}")
+    logger.info(f"Configured for email: {EMAIL}")
+    logger.info("Note: When using Gunicorn, this block won't run. Gunicorn will import the 'app' object directly.")
+
