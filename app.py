@@ -100,3 +100,11 @@ def index():
         }
     }), 200
 
+
+# This allows the app to be imported by Gunicorn or run directly
+# Gunicorn will import 'app' object directly and ignore this block
+if __name__ == '__main__':
+    import sys
+    print("ERROR: Do not run app.py directly. Use: gunicorn app:app --bind 0.0.0.0:$PORT", file=sys.stderr)
+    sys.exit(1)
+
