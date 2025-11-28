@@ -4,10 +4,11 @@ FROM mcr.microsoft.com/playwright/python:v1.48.0-jammy
 # Set working directory
 WORKDIR /app
 
-# Copy requirements first for better caching
-COPY requirements.txt .
+# Install Playwright Python package (browsers already in image)
+RUN pip install --no-cache-dir playwright==1.48.0
 
-# Install Python dependencies
+# Copy requirements and install other dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
